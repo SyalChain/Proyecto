@@ -1,21 +1,38 @@
 {% extends "layout.php" %}
 
-{% block tabActivo %}crear{% endblock tabActivo %}
+{% block tabActivo %}contacto{% endblock tabActivo %}
 
 {% block cuerpo %}
 
-<h1>Formulario</h1>
-    <form method="post" action="/guardar">
-        <fieldset>
-            <legend>Texto del dictado</legend>
-            <textarea style="width:10%" rows="1" cols="50" name="nombre">Nombre</textarea>
-            <textarea style="width:10%" rows="1" cols="50" name="Apellidos">Apellidos</textarea>
-            <br>
-            Email: <input type="text" name="email" value="ejemplo@gmail.com"><br>
-        Usuario: <input type="type"="text" name="email" value=><br>
-        Contraseña: <input type="password"="text" name="email" value=><br>
-            <input type="submit" value="crear cuenta"  class="btn"><br>
-           
-        </fieldset>
-    </form>
+{% if message %}
+	<div class="alert alert-success" role="alert"> {{ message|raw}}</div>
+{% endif %}
+
+{% if error %}
+	<div class="alert alert-error" role="alert"> {{ error|raw}}</div>
+{% endif %}
+
+<div class="jumbotron">
+	<h1>Háganos llegar su opinión</h1>
+	<p class="lead">Agradecemos nos indique qué le parece nuestro trabajo</p>
+</div>
+
+<form method="post" action="/guardarSugerencia" role="form">
+		<div class="form-group">
+			<label for="nombre">Nombre:</label>
+			<input type="text" class="form-control" id="nombre" name="nombre">
+		</div>
+		<div class="form-group">
+			<label for="email">Correo electrónico:</label>
+			<input type="text" class="form-control" id="email" name="email">
+		</div>
+		<div class="form-group">
+			<label for="comentario">Comentario:</label>
+			<textarea style="width:100%" rows="8" cols="50" class="form-control" id="comentario" name="comentario"></textarea>
+		</div>
+		
+		<button type="submit" class="btn btn-default">Enviar</button>
+</form>
+
 {% endblock cuerpo %}
+

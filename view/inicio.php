@@ -13,8 +13,8 @@
 {% endif %}
 
 <div class="jumbotron">
-	<h1>Porra Virtual</h1>
-	<p class="lead">Apuesta y Gana</p>
+	<h1>Bienvenid@</h1>
+	<p class="lead">Plantilla inicial proyecto web</p>
 </div>
 
 {% endblock cuerpo %}

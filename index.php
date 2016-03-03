@@ -103,21 +103,6 @@ $app->get('/borrar', function() use ($app){
     $app->redirect('/comentarios');
 }); 
 
-/*
-$app->get('/editar', function() use ($app){
-	
-	global $twig
-	
-	$valores=array(
-		"id"=>$app->request()->get('id')
-	);
-	
-	
-	$app->redirect('/comentarios');
-});
-
-*/
-
 $app->get('/contactar', function() use ($app){
     global $twig;
     echo $twig->render('contacto.php');  
