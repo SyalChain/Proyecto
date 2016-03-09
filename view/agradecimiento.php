@@ -13,10 +13,8 @@
 {% endif %}
 
 <div class="jumbotron">
-	<h1>Gracias por enviarnos su opinión "{{nombre}}"</h1>
-	<p class="lead">Lo que piensa nos resulta de gran utilidad, gracias por compartirlo.</p>
-	<p>Próximamente nos pondremos en contacto con ud. en la dirección <strong>{{correo}}</strong> que nos ha suministrado.</p>
+	<h1>Ya estas regristado como alumno del I.E.S Al-Andalus  "{{nombre}}"</h1>
+	<p class="lead">Sus datos serán utilizados en el control de partes del instituto</p>
+	<p>Para verificar sus datos enviaremos un email al correo <strong>{{correo}}</strong> que nos ha suministrado.</p>
 </div>
-
 {% endblock cuerpo %}
-

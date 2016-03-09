@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Plantilla web</title>
+		<title>Panel de control</title>
 		<meta charset="utf-8" />
 		{% block cabecera %}
 			<script src="/js/jquery.min.js"></script>
@@ -16,11 +16,12 @@
 			<div class="header">
 				<ul class="nav nav-pills pull-right">
 				    <li id="inicio" class="active"><a href="/">Inicio</a></li>
-				    <li id="contacto"><a href="/contactar">Contacto</a></li>
-				    <li id="comentarios"><a href="/comentarios">Comentarios</a></li>
+				    <li id="contacto"><a href="/contactar">Formulario para alumnos</a></li>
+				    <li id="comentarios"><a href="/comentarios">Alumnos</a></li>
 				    <li id="about"><a href="/about">Acerca de</a></li>
 				</ul>
-				<h3 class="text-muted">PlantillaWEB</h3>
+				<h3 class="text-muted">Panel de control</h3>
+				<img src="img/logotipodefinitivatititititon.png" height="160" width="160">
 			</div>
 			
 			{% block cuerpo %} {% endblock %}

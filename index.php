@@ -74,7 +74,7 @@ $app->get('/comentarios', function() use ($app){
     global $twig;
     
     $pdo=$app->db;
-    $r = $pdo->query("select id, nombre, email from contacto")->fetchAll(PDO::FETCH_ASSOC);
+    $r = $pdo->query("select id, nombre, email, direccion, telefono, comentario from alumno")->fetchAll(PDO::FETCH_ASSOC);
 		
 	$valores=array('comentarios'=>$r);
 
@@ -95,7 +95,7 @@ $app->get('/borrar', function() use ($app){
 		"id"=>$app->request()->get('id')
 	);
 	
-	$sql = "delete from contacto WHERE ID=:id";
+	$sql = "delete from alumno WHERE ID=:id";
 	$pdo = $app->db;
 	$q   = $pdo->prepare($sql);
 	$q->execute($valores);
@@ -112,18 +112,18 @@ $app->get('/editar', function() use ($app){
 	);
 	
 	$pdo=$app->db;
-    $q = $pdo->prepare("select * from contacto where id=:id");
+    $q = $pdo->prepare("select * from alumno where id=:id");
     $q->execute($valores);
     $r=$q->fetch(PDO::FETCH_ASSOC);
 		
 	$valores=array('comentario'=>$r);
 
-    echo $twig->render('contacto.php',$valores);  	
+    echo $twig->render('alumno.php',$valores);  	
 }); 
 
 $app->get('/contactar', function() use ($app){
     global $twig;
-    echo $twig->render('contacto.php');  
+    echo $twig->render('alumno.php');  
 }); 
 
 $app->post('/guardarSugerencia', function() use ($app){
@@ -135,12 +135,14 @@ $app->post('/guardarSugerencia', function() use ($app){
     $valores=array(
 		'id'=>$app->request()->post('id'),
 		'nombre'=>$app->request()->post('nombre'),
-		'email'=>$app->request()->post('email'),
+		'email'=>$app->request()->post('email'),		
+		'direccion'=>$app->request()->post('direccion'),	
+		'telefono'=>$app->request()->post('telefono'),	
 		'comentario'=>$app->request()->post('comentario')
     );
 
 	if($valores['id']){
-		$sql = "update contacto set NOMBRE=:nombre, EMAIL=:email, COMENTARIO=:comentario WHERE ID=:id";
+		$sql = "update alumno set NOMBRE=:nombre, EMAIL=:email, DIRECCION=:direccion TELEFONO=:telefono, COMENTARIO=:comentario WHERE ID=:id";
 		$pdo=$app->db;
 		$q = $pdo->prepare($sql);
 		$q->execute($valores);
@@ -151,7 +153,7 @@ $app->post('/guardarSugerencia', function() use ($app){
 	{
 		unset($valores['id']);
 		
-		$sql = "INSERT INTO contacto (nombre, email, comentario) VALUES (:nombre, :email, :comentario)";
+		$sql = "INSERT INTO alumno (nombre, email, direccion, telefono, comentario) VALUES (:nombre, :email, :direccion, :telefono, :comentario)";
 		$pdo=$app->db;
 		$q = $pdo->prepare($sql);
 		$q->execute($valores);
