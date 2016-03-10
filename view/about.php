@@ -14,7 +14,7 @@
 
 <div class="jumbotron">
 	<h1>Acerca del proyecto</h1>
-	<p class="lead">Nuestro objetivo es desarrollar una aplicación web en clase de Informática</p>
+	<p class="lead">Nuestro objetivo es que la información de los alumnos este almacenada</p>
 </div>
 
 {% endblock cuerpo %}

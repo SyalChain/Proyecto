@@ -13,8 +13,8 @@
 {% endif %}
 
 <div class="jumbotron">
-	<h1>Háganos llegar su opinión</h1>
-	<p class="lead">Agradecemos nos indique qué le parece nuestro trabajo</p>
+	<h1>Registrese como alumno del I.E.S. Al-Ándalus</h1>
+	<p class="lead">Todos los campos son obligatorios</p>
 </div>
 
 <form method="post" action="/guardarSugerencia" role="form">

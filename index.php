@@ -142,7 +142,7 @@ $app->post('/guardarSugerencia', function() use ($app){
     );
 
 	if($valores['id']){
-		$sql = "update alumno set NOMBRE=:nombre, EMAIL=:email, DIRECCION=:direccion TELEFONO=:telefono, COMENTARIO=:comentario WHERE ID=:id";
+		$sql = "update alumno set NOMBRE=:nombre, EMAIL=:email, DIRECCION=:direccion, TELEFONO=:telefono, COMENTARIO=:comentario WHERE ID=:id";
 		$pdo=$app->db;
 		$q = $pdo->prepare($sql);
 		$q->execute($valores);
