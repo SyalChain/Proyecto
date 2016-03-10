@@ -13,8 +13,8 @@
 {% endif %}
 
 <div class="jumbotron">
-	<h1>Comentarios recibidos</h1>
-	<p class="lead">El primer comentario que nos hicieron fue</p>
+	<h1>Alumnos registrados</h1>
+	<p class="lead">Lista de alumnos</p>
 	{% for comentario in comentarios %}
 	
 		{% for campo, valor in comentario %}
