@@ -13,7 +13,7 @@
 {% endif %}
 
 <div class="jumbotron">
-	<h1>Acerca del proyecto</h1>
+	<h1>Acerca de nuestro proyecto</h1>
 	<p class="lead">Nuestro objetivo es que la información de los alumnos este almacenada</p>
 </div>
 
